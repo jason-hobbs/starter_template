@@ -1,0 +1,54 @@
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="card shadow">
+        <div class="card-body">
+          
+          <div class="btn-group">
+            <div class="iconborder d-flex justify-content-center align-items-center">
+              <i class="bi-key-fill icon-color"></i>
+            </div>
+            <h4 class="cardtitle">Sign in</h4>
+          </div>
+          
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <fieldset>
+              <div class="form-group ms-3">
+                <div class="row">
+                  <div class="col-sm-12 mb-2">
+                    <%= f.text_field :email, class: "form-control", hide_label: true, autofocus: true, placeholder: "Email" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 mb-2">
+                    <%= f.password_field :password, class: "form-control", hide_label: true, autocomplete: "off", placeholder: "Password" %>
+                  </div>
+                </div>
+                
+                <% if devise_mapping.rememberable? %>
+                  <div class="field ms-3">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end %>
+                
+              </div>
+            </fieldset>
+            <fieldset class="form-group action mt-2 ms-3">
+              <%= f.submit "Sign in", class: "btn btn-site" %>
+              
+            </fieldset>
+          <% end %>
+          <div class="row mt-3">
+            <div class="col-sm-12">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

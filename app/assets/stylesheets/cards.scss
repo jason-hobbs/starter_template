@@ -1,0 +1,40 @@
+.iconborder {
+  border: 2px solid;
+  border-color: $site-color;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+@-moz-document url-prefix() {
+  .iconborder i {
+    top: 3px;
+    position: relative;
+  }
+}
+
+.cardtitle {
+  font-size: 2rem;
+  color: $site-color;
+  top: 5px;
+  position: relative;
+}
+
+.icon-color {
+  font-size: 2.5rem;
+  color: $site-color;
+}
+
+.card {
+  a:focus, a:visited, a:link {
+    text-decoration: none;
+    color: $site-color;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $site-color;
+    filter: brightness(125%);
+  }
+}

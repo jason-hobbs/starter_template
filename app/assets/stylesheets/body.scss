@@ -1,0 +1,59 @@
+body {
+  background: #f7f9fc;
+  font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+$site-color: teal;
+$text-light: white;
+
+.form-control:focus {
+  border-color: $site-color;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $site-color;
+}
+
+input[type=checkbox] {
+  accent-color: $site-color;
+}
+
+.flash {
+  position:fixed;
+  top: 5px;
+  left: 50%;
+  z-index: 99999;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  width: max-content;
+  padding: 0 16px;
+
+  &__message {
+    font-size: 16px;
+    color: white;
+    padding: 10px 16px;
+    background-color: #009fb3;
+    animation: appear-then-fade 4s both;
+    border-radius: 5px;
+  }
+}
+
+.notice {
+  background-color: green;
+}
+
+.alert {
+  background-color: red;
+}
+
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity:0
+  }
+  5%, 60% {
+    opacity:1
+  }
+}

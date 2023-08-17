@@ -1,0 +1,14 @@
+<% flash.each do |flash_type, message| %>
+  <% if flash_type == "alert" %>
+    <% color = "flash__message alert" %>
+    <% icon = "bi bi-exclamation-circle-fill" %>
+  <% else %>
+    <% color = "flash__message" %>
+    <% icon = "bi bi-check-circle" %>
+  <% end %>
+
+  <div class="<%= color %>" data-controller="removals" data-action="animationend->removals#remove">
+    <i class="<%= icon %>"></i>
+    <%= message %>
+  </div>
+<% end %>
